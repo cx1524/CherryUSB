@@ -1304,8 +1304,9 @@ static void dwc2_port_irq_handler(struct usbh_bus *bus)
 {
     __IO uint32_t hprt0, hprt0_dup, regval;
 
+#if defined(CONFIG_USB_HS)
     (void)regval;
-
+#endif
     /* Handle Host Port Interrupts */
     hprt0 = USB_OTG_HPRT;
     hprt0_dup = USB_OTG_HPRT;
